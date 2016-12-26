@@ -27,12 +27,11 @@ public class BaseDao<T> implements IBaseDao<T> {
 		}
 		return clz;
 	}
-	//���������ĸ���Сдd
+
 	private String firstCharLower(String fieldName) {
 		return fieldName.toLowerCase();
 	}
-	
-	//�����Ե�����ĸ��ɴ�д
+
 	private String firstCharUpper(String fieldName) {
 		StringBuffer sb = new StringBuffer();
 		sb.append((fieldName.charAt(0) + "").toUpperCase());
