@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/src/com/hkwy/dao/impl/ClientDao.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/com/hkwy/dao/impl/UserDao.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/com/hkwy/service/impl/UserService.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/com/hkwy/servlet/ProductServlet.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/com/hkwy/servlet/UserServlet.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/src/com/hkwy/test/TestProduct.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/com/hkwy/util/CodeUtil.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/com/hkwy/util/DBUtil.java" charset="GBK" />
   </component>

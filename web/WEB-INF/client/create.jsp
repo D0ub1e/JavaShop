@@ -23,28 +23,27 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-    <h1 align="center">用户注册</h1>
-    <hr>
     <form action="<%=request.getContextPath()%>/client?method=add" method="post">
 	    <table align="center">
 	    	<tr>
-	    		<td>用户名</td>
+	    		<td>Username</td>
 	    		<td><input type="text" name="username"></td>
 	    	</tr>
 	    	<tr>
-	    		<td>密码</td>
+	    		<td>PassWord</td>
 	    		<td><input type="password" name="password"></td>
 	    	</tr>
 	    	<tr>
-	    		<td>确认密码</td>
+	    		<td>Confirm Password</td>
 	    		<td><input type="password" name="password1"></td>
 	    	</tr>
+			//这个地方需要修改
 	    	<tr>
-	    		<td>手机</td>
+	    		<td>Email</td>
 	    		<td><input type="text" name="phone"></td>
 	    	</tr>
 	    	<tr>
-	    		<td colspan="2"><input type="submit" value="确定"></td>
+	    		<td colspan="2"><input type="submit" value="Enter"></td>
 	    	</tr>
 	    </table>
     </form>
