@@ -1,19 +1,17 @@
 package com.hkwy.servlet;
 
 
-import java.io.IOException;
-import java.util.List;
-
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-
 import com.hkwy.model.Page;
 import com.hkwy.model.User;
 import com.hkwy.model.UserException;
 import com.hkwy.service.IUserService;
 import com.hkwy.service.impl.UserService;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import java.io.IOException;
 
 public class UserServlet extends BaseServlet {
 	IUserService userService = new UserService();
@@ -65,7 +63,6 @@ public class UserServlet extends BaseServlet {
 	
 	public String list(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
-		//List<User> users = userService.list();
 		Page<User> pages = userService.pages();
 		req.setAttribute("pages", pages);
 		return "WEB-INF/jsp/user/list.jsp";
@@ -85,8 +82,6 @@ public class UserServlet extends BaseServlet {
 			return "error:";
 		}
 		HttpSession session = req.getSession();//创建session
-		//session.setMaxInactiveInterval(arg0);//设置session的有效期,单位秒
-		//session.setMaxInactiveInterval(10);
 		session.setAttribute("loginUser", user);
 		return "WEB-INF/jsp/main.jsp";
 	}

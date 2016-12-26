@@ -1,7 +1,5 @@
 package com.hkwy.service.impl;
 
-import java.util.List;
-
 import com.hkwy.dao.IClientDao;
 import com.hkwy.dao.impl.ClientDao;
 import com.hkwy.model.Client;
@@ -10,6 +8,9 @@ import com.hkwy.model.UserException;
 import com.hkwy.service.IClientService;
 import com.hkwy.util.CodeUtil;
 
+import java.util.List;
+
+@SuppressWarnings("LossyEncoding")
 public class ClientService implements IClientService {
 	private static IClientDao clientDao = new ClientDao();
 	public void add(Client client) {
@@ -48,10 +49,10 @@ public class ClientService implements IClientService {
 		// TODO Auto-generated method stub
 		Client client = clientDao.login(msg);
 		if(client == null) {
-			throw new UserException("用户名不存在");
+			throw new UserException("The user isnt exit");
 		}
 		if(!client.getPassword().equals(CodeUtil.getMD5Encoding(password))) {
-			throw new UserException("密码不正确");
+			throw new UserException("Wrong Password");
 		}
 		return client;
 	}
