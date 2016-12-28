@@ -21,14 +21,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	-->
 
   </head>
-  
+
 
   <frameset rows="100,*">
-  	<frame src="<%=request.getContextPath() %>/user?method=top" scrolling="no">
-  	<frameset cols="250,*">
-  		<frame src="<%=request.getContextPath() %>/user?method=left" noresize="noresize">
-  		<frame src="<%=request.getContextPath() %>/user?method=welcome" noresize="noresize" name="content">
-  	</frameset>
+	  <frame src="<%=request.getContextPath() %>/user?method=top" scrolling="no">
+	  <frameset cols="250,*">
+		  <frame src="<%=request.getContextPath() %>/user?method=left" noresize="noresize">
+		  <frame src="<%=request.getContextPath() %>/user?method=welcome" noresize="noresize" name="content">
+	  </frameset>
   </frameset>
 
 </html>

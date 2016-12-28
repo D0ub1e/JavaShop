@@ -103,6 +103,7 @@ public class UserServlet extends BaseServlet {
 		session.invalidate();//清空session
 		return "redirect:login.jsp";
 	}
+
 	
 	public String top(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
@@ -124,6 +125,29 @@ public class UserServlet extends BaseServlet {
 		int id = Integer.parseInt(req.getParameter("id"));
 		userService.updateStatus(id);
 		return "redirect:user?method=list";
+	}
+
+
+	/**
+	 * 这是客户端的网站部分
+	 * @param req
+	 * @param resp
+	 * @return
+	 * @throws ServletException
+	 * @throws IOException
+	 */
+	public String shop(HttpServletRequest req, HttpServletResponse resp)
+			throws ServletException, IOException {
+		return "WEB-INF/client/context/shop.jsp";
+	}
+
+	public String head(HttpServletRequest req, HttpServletResponse resp)
+			throws ServletException, IOException {
+		return "WEB-INF/client/head.jsp";
+	}
+	public String foot(HttpServletRequest req, HttpServletResponse resp)
+			throws ServletException, IOException {
+		return "WEB-INF/client/foot.jsp";
 	}
 
 }
