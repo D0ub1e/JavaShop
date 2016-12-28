@@ -31,6 +31,7 @@ public class UserServlet extends BaseServlet {
 		String nickname = req.getParameter("nickname");
 		User user = new User(username, password, nickname);
 		user.setRole(2);
+		user.setStatus(1);
 		userService.add(user);
 		return "redirect:user?method=list";
 	}
@@ -76,19 +77,25 @@ public class UserServlet extends BaseServlet {
 		String username = req.getParameter("username");
 		String password = req.getParameter("password");
 		User user = null;
+		String re =null;
+		HttpSession session = req.getSession();//创建session
+		//不同的用户身份跳转到不同的页面
 		try {
 			user = userService.login(username, password);
+			if (user.getRole()==1){
+				re="WEB-INF/jsp/main.jsp";
+			}else {
+				re="WEB-INF/jsp/client/index.jsp";
+			}
 		} catch (UserException e) {
 			// TODO Auto-generated catch block
 			String msg = e.getMessage();
 			req.setAttribute("error", msg);
 			return "error:";
 		}
-		HttpSession session = req.getSession();//创建session
-		//session.setMaxInactiveInterval(arg0);//设置session的有效期,单位秒
-		//session.setMaxInactiveInterval(10);
+
 		session.setAttribute("loginUser", user);
-		return "WEB-INF/jsp/main.jsp";
+		return re;
 	}
 	
 	public String logout(HttpServletRequest req, HttpServletResponse resp)

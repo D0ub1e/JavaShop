@@ -37,7 +37,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	    		<td>Confirm Password</td>
 	    		<td><input type="password" name="password1"></td>
 	    	</tr>
-			//这个地方需要修改
+
 	    	<tr>
 	    		<td>Email</td>
 	    		<td><input type="text" name="phone"></td>

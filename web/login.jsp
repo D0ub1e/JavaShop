@@ -33,7 +33,7 @@
     <script src="assets/js/respond.min.js"></script>
     <![endif]-->
 </head>
-<body class="login-layout">
+<body class="login-layout light-login">
 <div class="main-container">
     <div class="main-content">
         <div class="row">
@@ -66,15 +66,14 @@
                                             <label class="block clearfix">
 														<span class="block input-icon input-icon-right">
 															<input type="text" class="form-control"
-                                                                   placeholder="Username" name="username"/>
+                                                                   placeholder="用户名" name="username" minlength="2" required/>
 															<i class="ace-icon fa fa-user"></i>
 														</span>
                                             </label>
-
                                             <label class="block clearfix">
 														<span class="block input-icon input-icon-right">
 															<input type="password" class="form-control"
-                                                                   placeholder="Password" name="password"/>
+                                                                   placeholder="密码" name="password" minlength="2" required/>
 															<i class="ace-icon fa fa-lock"></i>
 														</span>
                                             </label>
@@ -146,7 +145,7 @@
                                             <label class="block clearfix">
 														<span class="block input-icon input-icon-right">
 															<input type="email" class="form-control"
-                                                                   placeholder="Email"/>
+                                                                   placeholder="Email" minlength="2" required/>
 															<i class="ace-icon fa fa-envelope"></i>
 														</span>
                                             </label>
@@ -170,6 +169,9 @@
                             </div><!-- /.widget-body -->
                         </div><!-- /.forgot-box -->
 
+
+
+                        <!-- 注册界面-->
                         <div id="signup-box" class="signup-box widget-box no-border">
                             <div class="widget-body">
                                 <div class="widget-main">
@@ -181,34 +183,35 @@
                                     <div class="space-6"></div>
                                     <p>填写信息: </p>
 
-                                    <form>
-                                        <fieldset>
+                                    <form action="<%=request.getContextPath()%>/user?method=add" method="post">
+
+                                    <fieldset>
                                             <label class="block clearfix">
 														<span class="block input-icon input-icon-right">
-															<input type="email" class="form-control" placeholder="邮箱"/>
-															<i class="ace-icon fa fa-envelope"></i>
+															<input type="email" class="form-control" placeholder="邮箱" name="username" required/>
+															<i class="ace-icon fa fa-envelope"  ></i>
 														</span>
                                             </label>
 
                                             <label class="block clearfix">
 														<span class="block input-icon input-icon-right">
-															<input type="text" class="form-control" placeholder="用户名"/>
-															<i class="ace-icon fa fa-user"></i>
-														</span>
-                                            </label>
-
-                                            <label class="block clearfix">
-														<span class="block input-icon input-icon-right">
-															<input type="password" class="form-control"
-                                                                   placeholder="密码"/>
-															<i class="ace-icon fa fa-lock"></i>
+															<input type="text" class="form-control" placeholder="用户名" name="nickname" minlength="2" required/>
+															<i class="ace-icon fa fa-user" ></i>
 														</span>
                                             </label>
 
                                             <label class="block clearfix">
 														<span class="block input-icon input-icon-right">
 															<input type="password" class="form-control"
-                                                                   placeholder="确认密码"/>
+                                                                   placeholder="密码" name="password" minlength="5" required/>
+                                                                <i class="ace-icon fa fa-lock"></i>
+														</span>
+                                            </label>
+
+                                            <label class="block clearfix">
+														<span class="block input-icon input-icon-right">
+															<input type="password" class="form-control"
+                                                                   placeholder="确认密码" minlength="5" required/>
 															<i class="ace-icon fa fa-retweet"></i>
 														</span>
                                             </label>
@@ -224,17 +227,15 @@
                                             <div class="space-24"></div>
 
                                             <div class="clearfix">
-                                                <button type="reset" class="width-30 pull-left btn btn-sm">
+                                                <button type="reset" class="width-35 pull-left btn btn-sm">
                                                     <i class="ace-icon fa fa-refresh"></i>
                                                     <span class="bigger-110">重置</span>
                                                 </button>
 
-                                                <button type="button"
-                                                        class="width-65 pull-right btn btn-sm btn-success">
-                                                    <span class="bigger-110">注册</span>
+                                                <input type="submit" value="注册" class="width-35 pull-right btn btn-sm btn-primary">
 
-                                                    <i class="ace-icon fa fa-arrow-right icon-on-right"></i>
-                                                </button>
+                                                    <%--<i class="ace-icon fa fa-arrow-right icon-on-right"></i>--%>
+
                                             </div>
                                         </fieldset>
                                     </form>
@@ -250,6 +251,7 @@
                         </div><!-- /.signup-box -->
                     </div><!-- /.position-relative -->
 
+                    <!--修改背景图片按钮 -->
                     <div class="navbar-fixed-top align-right">
                         <br/>
                         &nbsp;
@@ -292,7 +294,18 @@
 <script type="text/javascript">
     if ('ontouchstart' in document.documentElement) document.write("<script src='assets/js/jquery.mobile.custom.min.js'>" + "<" + "/script>");
 </script>
-
+<!-- 这是个文本验证程序 -->
+<script src="WEB-INF/assets/js/jquery.validate.min.js"></script>
+<script>
+    $.validator.setDefaults({
+        submitHandler: function() {
+            alert("登陆成功!");
+        }
+    });
+    $().ready(function() {
+        $("#commentForm").validate();
+    });
+</script>
 <!-- inline scripts related to this page -->
 <script type="text/javascript">
     jQuery(function ($) {
@@ -305,7 +318,8 @@
     });
 
 
-    //you don't need this, just used for changing background
+
+    // 修改背景的装饰
     jQuery(function ($) {
         $('#btn-login-dark').on('click', function (e) {
             $('body').attr('class', 'login-layout');

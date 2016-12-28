@@ -5,8 +5,8 @@ public class User {
 	private String username;
 	private String password;
 	private String nickname;
-	private int role;//用户角色:1表示管理员,2表示普通用户
-	private int status;//用户状态:1表示启用,2表示停用
+	private int role;
+	private int status;
 	
 	public User() {
 		
