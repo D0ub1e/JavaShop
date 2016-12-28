@@ -85,7 +85,7 @@ public class UserServlet extends BaseServlet {
 			if (user.getRole()==1){
 				re="WEB-INF/jsp/main.jsp";
 			}else {
-				re="WEB-INF/jsp/client/index.jsp";
+				re="WEB-INF/client/index.jsp";
 			}
 		} catch (UserException e) {
 			// TODO Auto-generated catch block
@@ -93,7 +93,6 @@ public class UserServlet extends BaseServlet {
 			req.setAttribute("error", msg);
 			return "error:";
 		}
-
 		session.setAttribute("loginUser", user);
 		return re;
 	}
