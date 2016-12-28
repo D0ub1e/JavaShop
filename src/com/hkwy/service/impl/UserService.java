@@ -50,8 +50,8 @@ public class UserService implements IUserService {
 		if(user == null) {
 			throw new UserException("Don't find this User");
 		}
-		String newPassword = CodeUtil.getMD5Encoding(user.getPassword());
-		if(!newPassword.equals(password)) {
+		String newPassword = CodeUtil.getMD5Encoding(password);
+		if(!newPassword.equals(user.getPassword())) {
 			throw new UserException("Wrong password");
 		}
 		if(user.getStatus() == 2) {
