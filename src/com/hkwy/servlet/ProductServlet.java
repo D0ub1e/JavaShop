@@ -127,6 +127,7 @@ public class ProductServlet extends BaseServlet {
 	
 	public String buy(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
+		System.out.println("12313");
 		int id = Integer.parseInt(req.getParameter("id"));
 		Product product = productService.load(id);
 		req.setAttribute("product", product);

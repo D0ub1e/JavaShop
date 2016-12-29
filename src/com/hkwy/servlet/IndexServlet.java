@@ -30,7 +30,7 @@ public class IndexServlet extends HttpServlet {
 		List<Product> products = productService.list();
 		req.setAttribute("products", products);
         //为什么不能不user用户放到jsp中去
-		req.getRequestDispatcher("WEB-INF/client/index.jsp").forward(req, resp);
+		req.getRequestDispatcher("WEB-INF/client/context/shop.jsp").forward(req, resp);
 
 	}
 

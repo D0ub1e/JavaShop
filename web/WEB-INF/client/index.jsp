@@ -22,7 +22,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<link rel="apple-touch-icon" sizes="72x72" href="img/icons/apple-touch-icon-72x72.png">
 	<link rel="apple-touch-icon" sizes="114x114" href="img/icons/apple-touch-icon-114x114.png">
 </head>
-<frameset rows="10%,75%,15%" >
+<frameset rows="25%,60%,15%" >
 	<frame src="<%=request.getContextPath() %>/user?method=head"
 		   scrolling="no" frameborder="0" noresize="noresize" name="head" />
 	<frame src="<%=request.getContextPath() %>/user?method=shop"

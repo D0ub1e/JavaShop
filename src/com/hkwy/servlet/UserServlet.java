@@ -141,13 +141,17 @@ public class UserServlet extends BaseServlet {
 		return "WEB-INF/client/context/shop.jsp";
 	}
 
-	public String head(HttpServletRequest req, HttpServletResponse resp)
+	public String phone(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
-		return "WEB-INF/client/head.jsp";
+		return "WEB-INF/client/context/phone.jsp";
 	}
-	public String foot(HttpServletRequest req, HttpServletResponse resp)
+	public String os(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
-		return "WEB-INF/client/foot.jsp";
+		return "WEB-INF/client/context/os.jsp";
+	}
+	public String headphone(HttpServletRequest req, HttpServletResponse resp)
+			throws ServletException, IOException {
+		return "WEB-INF/client/context/headphone.jsp";
 	}
 
 }
