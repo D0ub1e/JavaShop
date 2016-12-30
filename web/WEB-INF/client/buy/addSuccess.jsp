@@ -4,56 +4,57 @@
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
-
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
-  <head>
-    <base href="<%=basePath%>">
-    
-    <title>My JSP 'addSuccess.jsp' starting page</title>
-    
-	<meta http-equiv="pragma" content="no-cache">
-	<meta http-equiv="cache-control" content="no-cache">
-	<meta http-equiv="expires" content="0">    
-	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
-	<meta http-equiv="description" content="This is my page">
-	<!--
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	-->
-	<style type="text/css">
-		* {
-			margin: 0px;
-			padding: 0px;
-			font-size: 12px;
-		}
-		
-		#header {
-			height: 40px;
-			background: #f5f5f5
-		}
-		
-		#c_header {
-			height: 40px;
-			width: 1000px;
-			position: absolute;
-			left: 50%;
-			margin-left: -500px;
-		}
-	</style>
-  </head>
-  
-  <body>
-    <div id="header">
-    	<div id="c_header">
-    		<c:if test="${loginClient eq null }">
-    			<a href="<%=request.getContextPath()%>/client?method=loginInput">登录</a>|
-    			<a href="<%=request.getContextPath()%>/client?method=create">注册</a>
-    		</c:if>
-    		<c:if test="${loginClient ne null }">
-    			<a>${loginClient.username }</a>
-    		</c:if>
-    	</div>
-    </div>
+<head>
+	<meta charset="utf-8">
+	<title>官方在线商城-Smattisan</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../../assets/css/custom.css">
+	<link rel="stylesheet" href="../../assets/css/bootstrap.min.css">
+
+	<script src="../../assets/js/jquery.2.1.1.min.js"></script>
+	<script src="../../assets/js/bootstrap.min.js"></script>
+</head>
+<body>
+<nav class="navbar" role="navigation">
+	<div class="container-fluid" >
+		<div class="nav-header">
+
+			<a class="navbar-brand"  href="<%=request.getContextPath()%>/user?method=shop" >锤子科技官方商城</a>
+		</div>
+
+		<ul class="nav navbar-nav navbar-right" >
+			<li><a href="<%=request.getContextPath()%>/user?method=phone" >Smartisan M1/M1l</a></li>
+			<li><a href="<%=request.getContextPath()%>/user?method=os" >Smartisan OS</a></li>
+			<li><a href="<%= request.getContextPath()%>/user?method=headphone" class="active">耳机</a></li>
+			<li class="dropdown">
+				<a href="#about" class="dropdown-toggle" data-toggle="dropdown">应用下载<b class="caret"></b></a>
+				<ul class="dropdown-menu">
+					<li><a href="#">jmeter</a></li>
+					<li><a href="#">EJB</a></li>
+					<li><a href="#">Jasper Report</a></li>
+					<li class="divider"></li>
+					<li><a href="#">分离的链接</a></li>
+					<li class="divider"></li>
+					<li><a href="#">另一个分离的链接</a></li>
+				</ul>
+			</li>
+			<li><a href="http://bbs.smartisan.com/forum.php">官方论坛</a></li>
+			<li>
+				<c:if test="${loginUser eq null }">
+					<a href="<%=request.getContextPath()%>/user?method=logout" target="_top">
+						<span class="glyphicon glyphicon-log-in"></span>
+						登录或注册
+					</a>
+				</c:if>
+				<c:if test="${loginUser ne null }">
+					<a class="glyphicon glyphicon-user">${loginUser.username }</a>
+				</c:if>
+
+			</li>
+		</ul>
+	</div>
+</nav>
     <div id="con">
     	<div id="c_con">
     		<h1>添加成功</h1>

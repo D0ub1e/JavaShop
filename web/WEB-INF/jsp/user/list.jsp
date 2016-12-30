@@ -22,13 +22,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="This is my page">
     <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
-
+	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	  <link rel="stylesheet" href="../../assets/css/custom.css">
   </head>
   
   <body>
-
-    <h1 align="center">用户列表</h1>
-  	<hr>
+  	<div class="panel panel-default">
+		<div class="panel-heading" align="center">用户列表</div>
     <table align="center" border="1" width="700px">
     	<tr>
     		<td>ID</td>
@@ -92,5 +92,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    			<a href="<%=request.getContextPath()%>/user?method=list&pageIndex=${pages.totalPage}">尾页</a>
     	</c:if>
     </div>
+        </div>
   </body>
 </html>

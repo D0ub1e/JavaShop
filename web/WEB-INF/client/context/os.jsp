@@ -7,44 +7,29 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>异常好用的 Smartisan OS </title>
+    <meta charset="utf-8">
+    <title>官方在线商城-Smattisan</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../assets/css/custom.css">
     <link rel="stylesheet" href="../../assets/css/bootstrap.min.css">
+
     <script src="../../assets/js/jquery.2.1.1.min.js"></script>
     <script src="../../assets/js/bootstrap.min.js"></script>
-    <style>
-        .jumbotron{
-            background:url("/assets/images/os3.0.png");
-            height: 300px;
-
-        }
-    </style>
-    <!-- 监听脚本-->
-    <script>
-        $(document).ready(function(){
-            $("#myNav").affix({
-                offset: {
-                    top: 125
-                }
-            });
-        });
-    </script>
 </head>
-<body data-spy="scroll" data-target="#myScrollspy">
+<body>
 <nav class="navbar" role="navigation">
     <div class="container-fluid" >
         <div class="nav-header">
-            <a class="navbar-brand"  href="<%=request.getContextPath()%>/user?method=shop" target="context" >锤子科技官方商城</a>
+
+            <a class="navbar-brand"  href="<%=request.getContextPath()%>/user?method=shop" >锤子科技官方商城</a>
         </div>
 
         <ul class="nav navbar-nav navbar-right" >
             <li><a href="<%=request.getContextPath()%>/user?method=phone" >Smartisan M1/M1l</a></li>
-            <li><a href="<%=request.getContextPath()%>/user?method=os" class="active">Smartisan OS</a></li>
-            <li><a href="#blog">欢喜云</a></li>
+            <li><a href="<%=request.getContextPath()%>/user?method=os" >Smartisan OS</a></li>
+            <li><a href="<%= request.getContextPath()%>/user?method=headphone" class="active">耳机</a></li>
             <li class="dropdown">
                 <a href="#about" class="dropdown-toggle" data-toggle="dropdown">应用下载<b class="caret"></b></a>
                 <ul class="dropdown-menu">
@@ -60,14 +45,13 @@
             <li><a href="http://bbs.smartisan.com/forum.php">官方论坛</a></li>
             <li>
                 <c:if test="${loginUser eq null }">
-                    <a href="<%=request.getContextPath()%>/user?method=logout">
+                    <a href="<%=request.getContextPath()%>/user?method=logout" target="_top">
                         <span class="glyphicon glyphicon-log-in"></span>
                         登录或注册
                     </a>
                 </c:if>
                 <c:if test="${loginUser ne null }">
-                    <span class="glyphicon glyphicon-user"></span>
-                    <a>${loginUser.username }</a>
+                    <a class="glyphicon glyphicon-user">${loginUser.username }</a>
                 </c:if>
 
             </li>
@@ -101,13 +85,13 @@
 
              <h3><span class="label label-primary">1.1 One Step</span></h3>
             <div align="center">
-                <img src="/assets/images/onestep.png">
+                <img src="/img/onestep.png">
             </div>
             <p>通过拖拽完成将信息发送至应用或联系人的动作，节省了在不同应用之间切换的诸多步骤，第一次打通了手持设备中应用间的边界</p>
 
             <h3><span class="label label-primary">1.2 Big Bang</span></h3>
             <div align="center">
-                <img src="/assets/images/bigbang.png">
+                <img src="/img/bigbang.png">
             </div>
             <p>用拇指大面积按压屏幕中的文字，“Big Bang” 会将你按住的那一段落文字全部“炸”开</p>
             <p>按照语义智能拆分成易于选取的独立的字和词，由你随心所欲地选择，并可直接搜索、分享和复制</p>

@@ -59,11 +59,18 @@
     </div>
 </nav>
 <h1 align="center">商品列表</h1>
+<div class="container">
+    <div class="jumbotron height-auto">
+        <c:forEach items="${products}" var="s">
+            <%--<div class=""--%>
+        </c:forEach>
+    </div>
+</div>
 <div class="carousel-inner">
     <div id="c_con">
         <c:forEach items="${products }" var="p">
             <div class="item ">
-                <a href="<%=request.getContextPath()%>/product?method=buy&id=${p.id}">点击购买</a>
+                <a href="<%=request.getContextPath()%>/product?method=buy&id=${p.id}">加入购物车中</a>
                 <img src="<%=request.getContextPath() %>/img/${p.img }" width="200"/>
             </div>
                 <div class="text-area">

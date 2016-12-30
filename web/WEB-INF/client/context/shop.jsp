@@ -9,20 +9,25 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
+        <link rel="icon" href="../../../img/logo.png" sizes="any" />
     <meta charset="utf-8">
-    <title>官方在线商城-Smattisan</title>
+    <title >官方在线商城-Smattisan</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../assets/css/custom.css">
     <link rel="stylesheet" href="../../assets/css/bootstrap.min.css">
-
     <script src="../../assets/js/jquery.2.1.1.min.js"></script>
     <script src="../../assets/js/bootstrap.min.js"></script>
+    <style>
+        .carousel-inner{
+            height: 300px;
+        }
+    </style>
 </head>
 <body>
 <nav class="navbar" role="navigation">
     <div class="container-fluid" >
         <div class="nav-header">
-
+            <img  class="navbar-brand" src="../../../img/logo.png">
             <a class="navbar-brand"  href="<%=request.getContextPath()%>/user?method=shop" >锤子科技官方商城</a>
         </div>
 
@@ -58,7 +63,7 @@
         </ul>
     </div>
 </nav>
-<div id="myCarousel" class="carousel slide">
+<div id="myCarousel" class="carousel ">
     <!-- 轮播（Carousel）指标  ol是值标签定义有序列表-->
     <ol class="carousel-indicators">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>

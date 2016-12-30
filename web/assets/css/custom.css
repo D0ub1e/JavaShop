@@ -1,16 +1,10 @@
-@import url(bootstrap.min.css);
+
 .navbar{
     position: relative;
     background-color: #f1f1f1;
     padding:0px 0px 0px 0px;
 
 }
-/*.navbar .nav .navbar-nav >a>.active,*/
-/*.navbar >.active>a:hover,*/
-/*.navbar >.active>a:focus{*/
-    /*background-color:#e20c01 ;*/
-/*}*/
-
 .active{
     background-color:#e20c01 ;
     color: #ffffff;
@@ -29,9 +23,7 @@ body {
     line-height: 30px;
     color: #000000;
 }
-.carousel-inner{
-    height: 300px;
-}
+
 ul.nav-tabs{
     width: 140px;
     margin-top: 20px;

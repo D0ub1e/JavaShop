@@ -81,22 +81,13 @@
   <filter-mapping>
     <filter-name>AdminCheckFilter</filter-name>
     <url-pattern>/WEB-INF/jsp/*</url-pattern>
-    <dispatcher>FORWARD</dispatcher>
-    <dispatcher>REQUEST</dispatcher>
-  </filter-mapping>
-  
-    <filter>
-    <filter-name>ClientCheckFilter</filter-name>
-    <filter-class>com.hkwy.filter.ClientCheckFilter</filter-class>
-  </filter>
-  <filter-mapping>
-    <filter-name>ClientCheckFilter</filter-name>
     <url-pattern>/WEB-INF/client/buy/*</url-pattern>
     <dispatcher>FORWARD</dispatcher>
     <dispatcher>REQUEST</dispatcher>
   </filter-mapping>
-  
-  <filter>
+
+
+    <filter>
     <filter-name>SystemContextFilter</filter-name>
     <filter-class>com.hkwy.filter.SystemContextFilter</filter-class>
     <init-param>
