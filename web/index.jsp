@@ -11,6 +11,6 @@
     <title>$Title$</title>
   </head>
   <body>
-  $END$
+  <a href="http://localhost:8080/index.html">进入测试网站</a>
   </body>
 </html>

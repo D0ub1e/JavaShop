@@ -29,7 +29,9 @@ public class IndexServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		List<Product> products = productService.list();
 		req.setAttribute("products", products);
-		req.getRequestDispatcher("WEB-INF/client/index.jsp").forward(req, resp);
+        //为什么不能不user用户放到jsp中去
+		req.getRequestDispatcher("WEB-INF/client/context/shop.jsp").forward(req, resp);
+
 	}
 
 }

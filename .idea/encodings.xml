@@ -4,6 +4,7 @@
     <file url="file://$PROJECT_DIR$/src/com/hkwy/dao/impl/BaseDao.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/com/hkwy/dao/impl/ClientDao.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/com/hkwy/dao/impl/UserDao.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/hkwy/service/impl/ClientService.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/com/hkwy/service/impl/UserService.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/com/hkwy/servlet/ProductServlet.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/com/hkwy/servlet/UserServlet.java" charset="GBK" />

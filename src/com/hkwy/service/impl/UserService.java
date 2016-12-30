@@ -1,5 +1,7 @@
 package com.hkwy.service.impl;
 
+import java.util.List;
+
 import com.hkwy.dao.IUserDao;
 import com.hkwy.dao.impl.UserDao;
 import com.hkwy.model.Page;
@@ -7,8 +9,6 @@ import com.hkwy.model.User;
 import com.hkwy.model.UserException;
 import com.hkwy.service.IUserService;
 import com.hkwy.util.CodeUtil;
-
-import java.util.List;
 
 
 public class UserService implements IUserService {
@@ -51,12 +51,11 @@ public class UserService implements IUserService {
 			throw new UserException("Don't find this User");
 		}
 		String newPassword = CodeUtil.getMD5Encoding(password);
-		System.out.println(newPassword);
-		if(!user.getPassword().equals(newPassword)) {
+		if(!newPassword.equals(user.getPassword())) {
 			throw new UserException("Wrong password");
 		}
 		if(user.getStatus() == 2) {
-			throw new UserException("NO Activity");
+			throw new UserException("用户被关禁闭");
 		}
 		return user;
 	}

@@ -75,7 +75,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     	<span>欢迎登录后台管理系统</span>
     </div>
     <div id="down">
-    	<span>欢迎[<a href="#"><%=loginUser.getNickname() %></a>]<a href="<%=request.getContextPath()%>/user?method=logout" target="_top">退出</a>&nbsp;&nbsp;2016年12月6日</span>
+    	<span>欢迎[<a href="#"><%=loginUser.getNickname() %>
+		</a>]<a href="<%=request.getContextPath()%>/user?method=logout" target="_top">退出</a>&nbsp;&nbsp;2016年12月6日</span>
     </div>
   </body>
 </html>

@@ -6,99 +6,28 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 %>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
-  <head>
-    <base href="<%=basePath%>">
-    
-    <title>My JSP 'index.jsp' starting page</title>
-    
-	<meta http-equiv="pragma" content="no-cache">
-	<meta http-equiv="cache-control" content="no-cache">
-	<meta http-equiv="expires" content="0">    
-	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
-	<meta http-equiv="description" content="This is my page">
-	<!--
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	-->
-	<style type="text/css">
-		* {
-			margin: 0px;
-			padding: 0px;
-			font-size: 12px;
-		}
-		
-		#header {
-			height: 40px;
-			background: #f5f5f5
-		}
-		
-		#c_header {
-			height: 40px;
-			width: 1000px;
-			position: absolute;
-			left: 50%;
-			margin-left: -500px;
-		}
-		
-		#c_con {
-			width: 1000px;
-			position: absolute;
-			left: 50%;
-			margin-left: -500px;
-			border: 1px #f00 solid;
-		}
-		
-		.c_con_nav {
-			width: 310px;
-			margin-left: 10px;
-			margin-right: 10px;
-			height: 460px;
-			border: 1px #f00 solid;
-			float: left;
-		}
-		
-		.up {
-			height: 230px;
-		}
-		
-		.down {
-			height: 230px;
-		}
-	</style>
-  </head>
-  
-  <body>
-    <div id="header">
-    	<div id="c_header">
-    		<c:if test="${loginClient eq null }">
-    			<a href="<%=request.getContextPath()%>/client?method=loginInput">登录</a>|
-    			<a href="<%=request.getContextPath()%>/client?method=create">注册</a>
-    		</c:if>
-    		<c:if test="${loginClient ne null }">
-    			<a>${loginClient.username }</a>
-    		</c:if>
-    	</div>
-    </div>
-    <div id="con">
-    	<div id="c_con">
-    		<div>
-    			<form action="<%=request.getContextPath()%>/product?method=find" method="post">
-    				<input type="text" name="msg">
-    				<input type="submit" value="搜索">
-    			</form>
-    		</div>
-    		<c:forEach items="${products }" var="p">
-    			<div class="c_con_nav">
-    				<div class="up"><a href="<%=request.getContextPath()%>/product?method=buy&id=${p.id}"><img src="<%=request.getContextPath() %>/img/${p.img } " width="200"/></a></div>
-    				<div class="down">
-    					单价:${p.price }<br>
-    					${p.name }<br>
-    					${p.disc }<br> 
-    					销量:${p.total }&nbsp;库存:${p.num }
-    				</div>
-    			</div>
-    		</c:forEach>
-    	</div>
-    </div>
-  </body>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>官方在线商城-Smattisan</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="hudd">
+	<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+	<link href="css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
+	<link rel="stylesheet" href="css/font/fontello.css" type="text/css" media="screen"/>
+	<link href="css/styles.css" rel="stylesheet" media="screen">
+	<link href="css/media-queries.css" rel="stylesheet" media="screen">
+	<link rel="shortcut icon" href="img/icons/favicon.ico">
+	<link rel="apple-touch-icon" href="img/icons/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="img/icons/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="img/icons/apple-touch-icon-114x114.png">
+</head>
+<frameset rows="25%,60%,15%" >
+	<frame src="<%=request.getContextPath() %>/user?method=head"
+		   scrolling="no" frameborder="0" noresize="noresize" name="head" />
+	<frame src="<%=request.getContextPath() %>/user?method=shop"
+		   scrolling="no" frameborder="0" noresize="noresize" name="context" />
+	<frame src="<%=request.getContextPath() %>/user?method=foot"
+		   scrolling="no" frameborder="0" noresize="noresize" />
+</frameset>
 </html>

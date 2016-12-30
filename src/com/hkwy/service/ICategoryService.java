@@ -12,6 +12,6 @@ public interface ICategoryService {
 	public Category load(int id);
 	public List<Category> list();
 	public Page<Category> pages();
-	public Category loadByName(String msg);
+	public Category loadByName (String msg);
 
 }
