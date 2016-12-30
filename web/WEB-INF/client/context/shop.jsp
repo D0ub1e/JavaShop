@@ -29,7 +29,7 @@
         <ul class="nav navbar-nav navbar-right" >
             <li><a href="<%=request.getContextPath()%>/user?method=phone" >Smartisan M1/M1l</a></li>
             <li><a href="<%=request.getContextPath()%>/user?method=os" >Smartisan OS</a></li>
-            <li><a href="<%= request.getContextPath()%>/user?method=headphone">耳机</a></li>
+            <li><a href="<%=request.getContextPath()%>/product?method=find&msg=headphone">耳机</a></li>
 
             <li class="dropdown">
                 <a href="#about" class="dropdown-toggle" data-toggle="dropdown">应用下载<b class="caret"></b></a>
@@ -52,10 +52,8 @@
                     </a>
                 </c:if>
                 <c:if test="${loginUser ne null }">
-                    <span class="glyphicon glyphicon-user"></span>
-                    <a>${loginUser.username }</a>
+                <a class="glyphicon glyphicon-user">&nbsp;${loginUser.username }</a>
                 </c:if>
-
             </li>
         </ul>
     </div>

@@ -2,13 +2,15 @@
 .navbar{
     position: relative;
     background-color: #f1f1f1;
+    padding:0px 0px 0px 0px;
 
 }
-.navbar .nav .navbar-nav >a>.active,
-.navbar >.active>a:hover,
-.navbar >.active>a:focus{
-    background-color:#e20c01 ;
-}
+/*.navbar .nav .navbar-nav >a>.active,*/
+/*.navbar >.active>a:hover,*/
+/*.navbar >.active>a:focus{*/
+    /*background-color:#e20c01 ;*/
+/*}*/
+
 .active{
     background-color:#e20c01 ;
     color: #ffffff;
@@ -16,9 +18,11 @@
 .container-fluid{
     font-size: 18px;
     height: 20px;
-    padding: 5px 15px;
+    padding: 0px 0px 0px 0px;
 }
 body {
+    margin: 0px;
+    padding: 0px;
     font-family: "sans-serif";
     font-size: 18px;
     font-weight: 400;

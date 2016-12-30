@@ -83,29 +83,29 @@
                                             <button type="reset" class="width-35 pull-left btn btn-sm btn-danger">
                                                 <span class="bigger-110">重置</span>
                                             </button>
-                                                <input type="submit" value="登陆" class="width-35 pull-right btn btn-sm btn-primary">
+                                            <input type="submit" value="登陆" class="width-35 pull-right btn btn-sm btn-primary">
 
                                             <div class="space-4"></div>
                                         </fieldset>
                                     </form>
                                     <%--<div class="social-or-login center">--%>
-                                        <%--<span class="bigger-110">第三方登录</span>--%>
+                                    <%--<span class="bigger-110">第三方登录</span>--%>
                                     <%--</div>--%>
 
                                     <%--<div class="space-9"></div>--%>
 
                                     <%--<div class="social-login center">--%>
-                                        <%--<a class="btn btn-primary">--%>
-                                            <%--<i class="ace-icon fa fa-facebook"></i>--%>
-                                        <%--</a>--%>
+                                    <%--<a class="btn btn-primary">--%>
+                                    <%--<i class="ace-icon fa fa-facebook"></i>--%>
+                                    <%--</a>--%>
 
-                                        <%--<a class="btn btn-info">--%>
-                                            <%--<i class="ace-icon fa fa-twitter"></i>--%>
-                                        <%--</a>--%>
+                                    <%--<a class="btn btn-info">--%>
+                                    <%--<i class="ace-icon fa fa-twitter"></i>--%>
+                                    <%--</a>--%>
 
-                                        <%--<a class="btn btn-danger">--%>
-                                            <%--<i class="ace-icon fa fa-google-plus"></i>--%>
-                                        <%--</a>--%>
+                                    <%--<a class="btn btn-danger">--%>
+                                    <%--<i class="ace-icon fa fa-google-plus"></i>--%>
+                                    <%--</a>--%>
                                     <%--</div>--%>
                                 </div><!-- /.widget-main -->
 
@@ -185,7 +185,7 @@
 
                                     <form action="<%=request.getContextPath()%>/user?method=add" method="post">
 
-                                    <fieldset>
+                                        <fieldset>
                                             <label class="block clearfix">
 														<span class="block input-icon input-icon-right">
 															<input type="email" class="form-control" placeholder="邮箱" name="username" required/>
@@ -234,7 +234,7 @@
 
                                                 <input type="submit" value="注册" class="width-35 pull-right btn btn-sm btn-primary">
 
-                                                    <%--<i class="ace-icon fa fa-arrow-right icon-on-right"></i>--%>
+                                                <%--<i class="ace-icon fa fa-arrow-right icon-on-right"></i>--%>
 
                                             </div>
                                         </fieldset>
@@ -316,33 +316,26 @@
             $(target).addClass('visible');//show target
         });
     });
-
-
-
     // 修改背景的装饰
     jQuery(function ($) {
         $('#btn-login-dark').on('click', function (e) {
             $('body').attr('class', 'login-layout');
             $('#id-text2').attr('class', 'white');
             $('#id-company-text').attr('class', 'blue');
-
             e.preventDefault();
         });
         $('#btn-login-light').on('click', function (e) {
             $('body').attr('class', 'login-layout light-login');
             $('#id-text2').attr('class', 'grey');
             $('#id-company-text').attr('class', 'blue');
-
             e.preventDefault();
         });
         $('#btn-login-blur').on('click', function (e) {
             $('body').attr('class', 'login-layout blur-login');
             $('#id-text2').attr('class', 'white');
             $('#id-company-text').attr('class', 'light-blue');
-
             e.preventDefault();
         });
-
     });
 </script>
 <div style="text-align:center;">

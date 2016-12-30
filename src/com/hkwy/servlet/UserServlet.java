@@ -85,7 +85,7 @@ public class UserServlet extends BaseServlet {
 			if (user.getRole()==1){
 				re="WEB-INF/jsp/main.jsp";
 			}else {
-				re="WEB-INF/client/index.jsp";
+				re="WEB-INF/client/context/shop.jsp";
 			}
 		} catch (UserException e) {
 			// TODO Auto-generated catch block

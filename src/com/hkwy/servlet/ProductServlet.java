@@ -109,7 +109,8 @@ public class ProductServlet extends BaseServlet {
 		req.setAttribute("pages", pages);
 		return "WEB-INF/jsp/product/list.jsp";
 	}
-	
+
+
 	public String find(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		String msg = req.getParameter("msg");
@@ -122,16 +123,23 @@ public class ProductServlet extends BaseServlet {
 			products = productService.loadByCategory(category.getId());
 		}
 		req.setAttribute("products", products);
-		return "WEB-INF/client/index.jsp";
+		return "WEB-INF/client/context/headphone.jsp";
+
 	}
 	
 	public String buy(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
-		System.out.println("12313");
+
 		int id = Integer.parseInt(req.getParameter("id"));
 		Product product = productService.load(id);
 		req.setAttribute("product", product);
-		return "WEB-INF/client/buy.jsp";
+		System.out.println("12313");
+		return "WEB-INF/client/context/headphone.jsp";
 	}
+//	public String addShopcart (HttpServletRequest req, HttpServletResponse resp)
+//			throws ServletException, IOException {
+//
+//		return
+//	}
 
 }

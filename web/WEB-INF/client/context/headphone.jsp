@@ -51,16 +51,30 @@
                     </a>
                 </c:if>
                 <c:if test="${loginUser ne null }">
-                    <span class="glyphicon glyphicon-user"></span>
-                    <a>${loginUser.username }</a>
+                    <a class="glyphicon glyphicon-user">${loginUser.username }</a>
                 </c:if>
 
             </li>
         </ul>
     </div>
 </nav>
-<h1>
-    <a href="<%=request.getContextPath()%>/product?method=buy"><span class="button">点击购买</span></a>
-</h1>
+<h1 align="center">商品列表</h1>
+<div class="carousel-inner">
+    <div id="c_con">
+        <c:forEach items="${products }" var="p">
+            <div class="item ">
+                <a href="<%=request.getContextPath()%>/product?method=buy&id=${p.id}">点击购买</a>
+                <img src="<%=request.getContextPath() %>/img/${p.img }" width="200"/>
+            </div>
+                <div class="text-area">
+                    单价:${p.price }<br>
+                        ${p.name }<br>
+                        ${p.disc }<br>
+                    销量:${p.total }&nbsp;库存:${p.num }
+                </div>
+        </c:forEach>
+    </div>
+</div>
+    <%--<a href="<%=request.getContextPath()%>/product?method=buy"><span class="button">点击购买</span></a>--%>
 </body>
 </html>
